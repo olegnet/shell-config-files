@@ -33,6 +33,7 @@ padding = { x = 3, y = 3 }
 opacity = 0.90
 blur = true
 decorations_theme_variant = "Dark"
+option_as_alt = "OnlyLeft"
 
 [selection]
 save_to_clipboard = true
