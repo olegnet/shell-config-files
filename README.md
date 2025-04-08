@@ -4,6 +4,8 @@
   Copy [alacritty.toml](alacritty.toml) to **~/.config/alacritty**
 
   - for "alacritty" TERM run this once in alacritty's source code folder (or use "xterm-256color")
+    
+    You can also download it [directly from GitHub.](https://github.com/alacritty/alacritty/blob/master/extra/alacritty.info)
     ```bash
     tic -xe alacritty,alacritty-direct extra/alacritty.info
     ```
@@ -16,8 +18,8 @@
 #### tmux (both macos and Linux)
   Checkout [base tmux config](https://github.com/gpakosz/.tmux.git) and put it to **~/.tmux**
 
-  Make a symlink **~/.tmux.conf** to **.tmux/.tmux.conf**
+  Make a symlink in home folder to **.tmux/.tmux.conf**: `ln -s .tmux/.tmux.conf`
 
-  Copy [.tmux.conf.local](.tmux.conf.local) to **~/** (different license, check it inside the file)
+  Copy [.tmux.conf.local](.tmux.conf.local) to **~/**
 
   This is an old version of https://github.com/gpakosz/.tmux/blob/master/.tmux.conf.local with minor modifications.
