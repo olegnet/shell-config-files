@@ -7,13 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_family": ".ZedSans",
+  "agent_ui_font_size": 16.0,
+  "hide_mouse": "on_typing",
+  "cursor_shape": "bar",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "outline_panel": {
     "dock": "left"
   },
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
     "inline_assistant_model": {
       "provider": "zed.dev",
@@ -24,8 +32,8 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "system",
     "light": "JetBrains New Dark",
@@ -100,7 +108,13 @@
   "languages": {
     "Rust": {
       "formatter": "language_server",
-      "format_on_save": "language_server"
+      "format_on_save": "off"
+    },
+    "Swift": {
+      "formatter": "language_server",
+      "format_on_save": "on"
     }
-  }
+  },
+  "double_click_in_multibuffer": "open",
+  "lsp_document_colors": "inlay"
 }

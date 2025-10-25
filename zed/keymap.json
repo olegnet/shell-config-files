@@ -9,14 +9,39 @@
   {
     "context": "Workspace",
     "bindings": {
-      "shift shift": "command_palette::Toggle"
-//      "shift shift": "file_finder::Toggle"
+      // "shift shift": "command_palette::Toggle"
+      "shift shift": "file_finder::Toggle"
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "Editor && showing_completions",
+    "use_key_equivalents": true,
     "bindings": {
-      // "j k": "vim::SwitchToNormalMode"
+      // "enter": "editor::ConfirmCompletion",
+      // "shift-enter": "editor::ConfirmCompletionReplace",
+      "tab": "editor::Tab",
+      "alt-tab": "editor::ComposeCompletion"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::Tab",
+      "alt-tab": "editor::AcceptEditPrediction"
+      // "ctrl-cmd-right": "editor::AcceptPartialEditPrediction"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      // "escape": "menu::Cancel",
+      // "up": "menu::SelectPrevious",
+      // "down": "menu::SelectNext",
+      "tab": "editor::Tab",
+      "alt-tab": "picker::ConfirmCompletion"
+      // "alt-enter": ["picker::ConfirmInput", { "secondary": false }],
+      // "cmd-alt-enter": ["picker::ConfirmInput", { "secondary": true }]
     }
   },
   {
