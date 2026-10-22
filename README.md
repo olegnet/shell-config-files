@@ -3,7 +3,7 @@
 ### Alacritty (macOS)
   Copy [alacritty.toml](alacritty.toml) to **~/.config/alacritty**
 
-  - for "alacritty" TERM run this once in alacritty's source code folder (or use "xterm-256color")
+  - To enable the "alacritty" TERM entry, run this once inside the Alacritty source folder (or use "xterm-256color")
     
     You can also download it [directly from GitHub.](https://raw.githubusercontent.com/alacritty/alacritty/refs/heads/master/extra/alacritty.info)
     ```bash
@@ -16,43 +16,24 @@
     [see also](https://github.com/alacritty/alacritty/issues/4616)
 
 ### tmux (both macOS and Linux)
-  Checkout [base tmux config](https://github.com/gpakosz/.tmux.git) and put it to **~/.tmux**
+  Checkout [base tmux config](https://github.com/gpakosz/.tmux.git) and put it in **~/.tmux**
 
-  Make a symlink in home folder to **.tmux/.tmux.conf**: `ln -s .tmux/.tmux.conf`
+  Create a symlink in your home directory to **.tmux/.tmux.conf**: `ln -s .tmux/.tmux.conf`
 
   Copy [.tmux.conf.local](.tmux.conf.local) to **~/**
+  Check the end of this file for useful key combinations.
 
-  This is an old version of https://github.com/gpakosz/.tmux/blob/master/.tmux.conf.local with minor modifications.
+  This is a modified legacy version of https://github.com/gpakosz/.tmux/blob/master/.tmux.conf.local
 
-### bash (both macOS and Linux)
+### zsh (both macOS and Linux)
 
-Some comfort hacks for .bashrc with tmux, based on the default .bashrc from Debian. Good for macOS too.
+  This is my [.zshrc](.zshrc) file. 
 
-```shell
-BLUE='\[\033[01;34m\]'
-GREEN='\[\033[01;32m\]'
-HOST_COLOR='\[\033[01;35m\]' # MAGENTA
-CYAN='\[\033[01;36m\]'
-YELLOW='\[\033[01;33m\]'
-RESET='\[\033[00m\]'
+  Ensure the following packages are installed:
+  ```bash
+  brew install zsh-autosuggestions zsh-syntax-highlighting
+  ```
 
-case "$TERM" in
-    xterm-color|*-256color|alacritty) color_prompt=yes;;
-esac
-
-if [ "$color_prompt" = yes ]; then
-    if [ -n "$TMUX" ]; then
-        PS1="${debian_chroot:+($debian_chroot)}${BLUE}╭─${GREEN}\u${RESET}@${HOST_COLOR}\h${RESET}:${BLUE}\w${RESET}\n${BLUE}╰─${RESET}\$ "
-    else
-        PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u${RESET}@${HOST_COLOR}\h${RESET}:${BLUE}\w${RESET}\$ "
-    fi
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-alias tma='tmux attach || tmux new'
-
-echo -n "tmux: " && tmux ls
-echo ""
-```
+  ```bash
+  sudo apt install zsh zsh-common zsh-autosuggestions zsh-syntax-highlighting
+  ```
