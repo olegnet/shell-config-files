@@ -8,7 +8,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export RUST_BACKTRACE=1
 export EZA_CONFIG_DIR=${HOME}/.config/eza
 export GIT_EDITOR="zed --wait"
-export EZA_CONFIG_DIR=${HOME}/.config/eza
 
 export PATH=\
 ${HOME}/bin:\
